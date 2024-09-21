@@ -7,28 +7,45 @@
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <style>
     html {
-      font-family: Arial;
+      font-family: Arial, sans-serif;
       display: inline-block;
       margin: 0px auto;
       text-align: center;
+      color: #ffffff;
+    }
+
+    body {
+      background: linear-gradient(120deg, rgb(0, 0, 32), rgb(18, 18, 77));
+      margin: 0;
+      padding: 20px;
     }
 
     h2 {
-      font-size: 3.0rem;
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     p {
-      font-size: 3.0rem;
+      font-size: 2.5rem;
+      margin: 20px 0;
     }
 
     .units {
-      font-size: 1.2rem;
+      font-size: 1.5rem;
+      vertical-align: super;
     }
 
     .dht-labels {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       vertical-align: middle;
       padding-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .icon {
+      margin-right: 10px;
     }
   </style>
 </head>
@@ -36,13 +53,13 @@
 <body>
   <h2>ESP32 DHT Server</h2>
   <p>
-    <i class="fas fa-thermometer-half" style="color:#059e8a;"></i>
+    <i class="fas fa-thermometer-half icon" style="color:#059e8a;"></i>
     <span class="dht-labels">Temperature</span>
     <span id="temperature">36</span>
     <sup class="units">&deg;C</sup>
   </p>
   <p>
-    <i class="fas fa-tint" style="color:#00add6;"></i>
+    <i class="fas fa-tint icon" style="color:#00add6;"></i>
     <span class="dht-labels">Humidity</span>
     <span id="humidity">61</span>
     <sup class="units">%</sup>
