@@ -1,12 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Initialize Typed.js
     var typed = new Typed('#element', {
         strings: ['Call Fire Department-101', 'Call Ambulance-108', 'Call Police-100'],
         typeSpeed: 50,
-        backSpeed: 25, // Optional: Adds a backspacing effect
-        backDelay: 1000, // Optional: Adds a delay before starting backspacing
-        startDelay: 500, // Optional: Adds a delay before starting the typing
-        loop: true, // Optional: Loops the typing animation
-        showCursor: false // Optional: Shows the blinking cursor
+        backSpeed: 25, // Adds a backspacing effect
+        backDelay: 1000, // Delay before starting backspacing
+        startDelay: 500, // Delay before starting typing
+        loop: true, // Loops the typing animation
+        showCursor: false // Hides the blinking cursor
     });
 
     // Smooth scroll functionality with delay
@@ -23,10 +24,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Parallax effect
+    // Parallax effect for images
     window.addEventListener('scroll', function () {
         let scrollPosition = window.pageYOffset;
-        document.querySelector('.parallax-img').style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
+        let parallaxImage = document.querySelector('.parallax-img');
+        if (parallaxImage) {
+            parallaxImage.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
+        }
     });
 
     // Tile transition effect
@@ -34,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', () => {
         const scrollPosition = window.scrollY + window.innerHeight;
         tiles.forEach(tile => {
-            if (scrollPosition > tile.offsetTop + 100) { // +100 to ensure the effect starts a bit earlier
+            if (scrollPosition > tile.offsetTop + 100) { // +100 to ensure the effect starts earlier
                 tile.classList.add('tile-visible');
             } else {
                 tile.classList.remove('tile-visible');
@@ -42,15 +46,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Sticky navbar
-    document.addEventListener('DOMContentLoaded', function () {
-        window.onscroll = function () {
-            var navbar = document.getElementById("navbar");
-            if (window.pageYOffset > 100) {
-                navbar.classList.add("sticky");
-            } else {
-                navbar.classList.remove("sticky");
-            }
-        };
+    // Sticky navbar functionality
+    window.addEventListener('scroll', function () {
+        var navbar = document.getElementById("navbar");
+        if (window.pageYOffset > 100) { // Apply sticky class when scrolled down 100px
+            navbar.classList.add("sticky");
+        } else {
+            navbar.classList.remove("sticky");
+        }
     });
 });

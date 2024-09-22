@@ -1,4 +1,4 @@
-/* CSS File: style.css */
+/* CSS File: styles.css */
 
 * {
     margin: 0;
@@ -13,14 +13,22 @@ body {
     scroll-behavior: smooth;
 }
 
-
-#navi-bar{
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+/* Sticky Navigation Bar */
+#navi-bar {
+    position: -webkit-sticky; /* For older Safari */
+    position: sticky; /* For modern browsers */
+    top: 0; /* Sticks to the top */
+    z-index: 1000; /* High z-index to stay on top of content */
+    background-color: rgba(0, 0, 64, 0.9); /* Ensures the background is visible when scrolling */
     color: #ecf5fa;
     font-size: 20px;
     font-weight: bold;
+}
+
+/* Navbar with sticky class when scrolled */
+#navbar.sticky {
+    background-color: rgba(0, 0, 64, 1); /* Solid background when sticky */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow when sticky */
 }
 
 nav {
@@ -29,16 +37,10 @@ nav {
     align-items: center;
     height: 80px;
     padding: 0 20px;
-    background-color: rgba(0, 0, 64, 0.9);
-    position: sticky;
-    top: 0;
+    background-color: rgba(0, 0, 64, 0.9); /* Same background for sticky */
+    position: relative; /* Keep it at top */
     z-index: 1000;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-#navbar.sticky {
-    background-color: rgba(0, 0, 64, 1);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 nav .left {
@@ -130,7 +132,6 @@ nav ul li a:hover {
     margin: 50px auto; /* Added margin */
     padding: 50px; /* Added padding */
     max-width: 1200px; /* Set max-width to center the content */
-    /* text-align: center; */
     opacity: 0;
     text-align: justify;
     transform: translateY(30px); /* Initial position */
@@ -221,35 +222,13 @@ table.colorful-table tbody tr.yellow-row {
     background-color: yellow;
 }
 
-
-
-.project-progress-scroll{
+/* Scroll and progress bar style */
+.project-progress-scroll {
     max-width: 600px;
     outline: 3px solid lime;
 }
 
-
-.prog-scroller{
+.prog-scroller {
     display: flex;
     gap: 1rem;
 }
-#navbar .right ul li a i {
-    margin-right: 5px;
-}
-
-#navbar .right ul li a {
-    display: flex;
-    align-items: center;
-}
-#navbar .left {
-    display: flex;
-    align-items: center;
-}
-
-#navbar .left .nav-logo {
-    height: 10px;
-    width: auto;
-    margin-right: 10px;
-    vertical-align: middle; 
-}
-
