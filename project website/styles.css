@@ -1,4 +1,4 @@
-/* CSS File: styles.css */
+/* CSS File: style.css */
 
 * {
     margin: 0;
@@ -13,22 +13,14 @@ body {
     scroll-behavior: smooth;
 }
 
-/* Sticky Navigation Bar */
-#navi-bar {
-    position: -webkit-sticky; /* For older Safari */
-    position: sticky; /* For modern browsers */
-    top: 0; /* Sticks to the top */
-    z-index: 1000; /* High z-index to stay on top of content */
-    background-color: rgba(0, 0, 64, 0.9); /* Ensures the background is visible when scrolling */
+
+#navi-bar{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     color: #ecf5fa;
     font-size: 20px;
     font-weight: bold;
-}
-
-/* Navbar with sticky class when scrolled */
-#navbar.sticky {
-    background-color: rgba(0, 0, 64, 1); /* Solid background when sticky */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow when sticky */
 }
 
 nav {
@@ -37,10 +29,16 @@ nav {
     align-items: center;
     height: 80px;
     padding: 0 20px;
-    background-color: rgba(0, 0, 64, 0.9); /* Same background for sticky */
-    position: relative; /* Keep it at top */
+    background-color: rgba(0, 0, 64, 0.9);
+    position: sticky;
+    top: 0;
     z-index: 1000;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#navbar.sticky {
+    background-color: rgba(0, 0, 64, 1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 nav .left {
@@ -132,6 +130,7 @@ nav ul li a:hover {
     margin: 50px auto; /* Added margin */
     padding: 50px; /* Added padding */
     max-width: 1200px; /* Set max-width to center the content */
+    /* text-align: center; */
     opacity: 0;
     text-align: justify;
     transform: translateY(30px); /* Initial position */
@@ -222,13 +221,77 @@ table.colorful-table tbody tr.yellow-row {
     background-color: yellow;
 }
 
-/* Scroll and progress bar style */
-.project-progress-scroll {
+
+
+.project-progress-scroll{
     max-width: 600px;
     outline: 3px solid lime;
 }
 
-.prog-scroller {
+
+.prog-scroller{
     display: flex;
     gap: 1rem;
 }
+#navbar .right ul li a i {
+    margin-right: 5px;
+}
+
+#navbar .right ul li a {
+    display: flex;
+    align-items: center;
+}
+#navbar .left {
+    display: flex;
+    align-items: center;
+}
+
+#navbar .left .nav-logo {
+    height: 10px;
+    width: auto;
+    margin-right: 10px;
+    vertical-align: middle; 
+}
+
+
+
+/* Main slider container */
+.slider {
+    width: 100%; /* Width of the visible area (3 images * 300px each) */
+    height: 300px;
+    overflow: hidden; /* Hide overflow to ensure a clean slide effect */
+    position: relative;
+    background-color: rgba(0, 0, 64, 0.9); /* Optional background color for contrast */
+    text-align: center;
+}
+
+/* The sliding track */
+.slide-track {
+    display: flex;
+    width: calc(300px * 6); /* Total width for 6 images (2 sets of 3 images) */
+    animation: scroll 10s linear infinite; /* Infinite scroll */
+    text-align: center;
+}
+
+/* Individual slide */
+.slide {
+    display: flexbox;
+    border-radius: 20%;
+    width: 300px; /* Set the width of each image */
+    height: 280px;
+    flex-shrink: 0; /* Prevent the images from shrinking */
+    margin: 10px;
+    text-align: center;
+    background-color:rgba(239, 235, 235, 0.3);
+}
+
+/* Keyframes for the scroll animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-300px * 3)); /* Moves the width of 3 images to the left */
+    }
+}
+
